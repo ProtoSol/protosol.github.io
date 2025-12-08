@@ -10,3 +10,9 @@ categories: Technical Project
 I don't have much to say but the website has been created. I used the github-pages and jenkyll to make this portfolio.
 
 I do plan on updating it frequently.
+
+### Plans for the Future:
+
+1. To add more Posts.
+2. Add Hyperlinks to the certificates.
+3. Add Hyperlinks to the Projects.
