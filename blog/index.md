@@ -6,6 +6,7 @@ permalink: /blog/
 
 <h2>Latest Posts</h2>
 
+{% if site.posts.size > 0 %}
 <ul>
   {% for post in site.posts %}
     <li>
@@ -16,3 +17,6 @@ permalink: /blog/
     </li>
   {% endfor %}
 </ul>
+{% else %}
+  <p>Cooking up something Great :D</p>
+{% endif %}
