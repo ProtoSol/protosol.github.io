@@ -1,5 +1,6 @@
 # protosol.github.io
 This is the portfolio website that is being hosted via the github pages.
+This is not being updated with the laatest information but I will update this sooner.
 
 ## Local Development
 
