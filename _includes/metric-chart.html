@@ -1,0 +1,12 @@
+{%- assign m = site.data.metrics -%}
+{%- assign max = 0.0 -%}
+{%- for r in m.rows -%}{%- if r.value > max -%}{%- assign max = r.value -%}{%- endif -%}{%- endfor -%}
+<figure class="chart">
+  <figcaption>{{ m.title }} <span class="muted">(lower is better)</span></figcaption>
+  <pre aria-label="Bar chart: {% for r in m.rows %}{{ r.name }} {{ r.value }}{{ m.unit }}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+{%- for r in m.rows -%}
+{%- assign n = r.value | times: 30 | divided_by: max | round -%}
+{{ r.name | append: "            " | slice: 0, 11 }} {% for i in (1..n) %}█{% endfor %} {{ r.value }}{{ m.unit }}{% if r.me %} ◀{% endif %}
+{% endfor -%}
+</pre>
+</figure>

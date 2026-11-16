@@ -1,0 +1,7 @@
+# Vistaar benchmark, strict WER % (lower is better). Source: resume / kapture-v3 model card.
+title: "Vistaar strict WER %, 74,500 clips"
+unit: "%"
+rows:
+  - { name: "kapture-v3", value: 21.9, me: true }
+  - { name: "saaras:v3",  value: 28.3 }
+  - { name: "saaras:v4",  value: 29.0 }

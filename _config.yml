@@ -1,25 +1,36 @@
-title: Pranshu Saini - Portfolio & Blog
+title: Pranshu Saini
+tagline: Applied ML engineer / voice AI
 author: Pranshu Saini
 email: ps1442003@outlook.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Portfolio and blog of Pranshu Saini, a programmer specializing in Data Science, Machine Learning, and AI development.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-theme: minima
+description: >-
+  Pranshu Saini, applied ML engineer working on voice AI: Indic speech recognition,
+  turn-taking and real-time audio.
+baseurl: ""
+url: ""
+
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+
 future: true
+show_excerpts: true
 
-# Social
+# Posts may be written as plain .txt files (YAML header + markdown body).
+markdown_ext: "markdown,mkdown,mkdn,mkd,md,txt"
+
 github_username: ProtoSol
+linkedin_url: https://www.linkedin.com/in/pranshu-saini-313100265
+x_username: MrProtho
 
-# Exclude files
+nav:
+  - { title: about, url: /about/ }
+  - { title: work, url: /portfolio/ }
+  - { title: blog, url: /blog/ }
+
 exclude:
   - blog_post_template.txt
+  - assets/admin_check.js
   - vendor/
-
-# Minima theme settings
-header_pages:
-  - about.md
-  - portfolio.md
-  - blog/index.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock

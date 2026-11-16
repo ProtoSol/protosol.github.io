@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="post">
+  <h1>{{ page.title | escape }}</h1>
+  <p class="muted">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+    {%- if page.categories.size > 0 %} · {{ page.categories | join: ", " }}{% endif %}
+  </p>
+  {{ content }}
+  <p class="rule">────────────────────────────────────────</p>
+  <p><a href="{{ '/blog/' | relative_url }}">← all posts</a></p>
+</article>

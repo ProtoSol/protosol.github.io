@@ -1,38 +1,42 @@
 ---
 layout: page
-title: About
+title: about
 permalink: /about/
 ---
+Applied ML engineer focused on voice AI. Contributed to Kapture v3, an 11-language Indic ASR model at 21.9% strict WER across the Vistaar benchmark and 6.06 OI-WER on conversational Monsoon Hindi, and open-sourced an end-of-turn detector that lifts Indian-language weighted F1 from 0.712 to 0.909.
 
-## Pranshu Saini
+## experience
 
-ps1442003@outlook.com | [LinkedIn](https://www.linkedin.com/in/pranshu-saini-313100265/) | [GitHub](https://github.com/ProtoSol)
+<div class="entry" markdown="1">
+<div class="role"><strong>Fonada, Noida</strong><span class="muted">Jun 2025 – present</span></div>
+<div class="meta">Applied ML / Voice AI</div>
 
-### Summary
-As a budding programmer, I bring a solid foundation in Data Visualization, Data Science, and Machine Learning. I'm all about adaptability constantly learning from mistakes and feedback to grow. My passion lies in honing my skills to creatively solve the questions posed by organizations, making me a dedicated professional eager to contribute.
+- Contributed to data processing, data generation, and model training for Kapture v3, an 11-language ASR model; the released system scored 21.9% strict WER across the 74,500-clip Vistaar benchmark, versus 28.3% for saaras:v3 and 29.0% for saaras:v4, and 17.3% versus 18.1% under Sarvam's normalizer.
+- Release benchmarks, each scored with its official scorer on public test sets: 6.06 OI-WER on Voice Arena Monsoon Hindi (saaras:v3 6.79, saaras:v4 6.96), 13.1 WER on Vaani Hindi, and 5.54% WER averaged over the nine Open ASR Leaderboard English sets. Model card: [huggingface.co/fonada/kapture-v3](https://huggingface.co/fonada/kapture-v3).
+- Ships on FonadaLabs as an upload-and-transcribe batch API: any-length audio up to 25MB across seven formats, long files decoded in parallel chunks with per-segment timestamps at ~60 ms median server time for a 2-second clip.
+- Built and optimized a PyTorch noise-suppression pipeline for real-time audio, adding batched inference and evaluating latency/quality trade-offs for voice-bot workflows.
+- Contributing to turn-taking for production voice bots: predicting when the system should listen, respond, or pause so telephony conversations stay natural.
+</div>
 
-### Work Experience
-**Fonada, Noida** (Jun 2025, Present)
-- Developed and optimized a noise suppression model for real-time processing with batching capability, leveraging advanced deep learning algorithms.
-- Currently working on the Smart Turn model, which enhances the voice bot's ability to maintain a natural conversation flow.
-- Conducted data collection and research on various models for improving performance and accuracy.
+## education
 
-### Education
-**B. Tech CSE** - DIT University, Dehradun (September 2021 - May 2025)
-- CGPA - 8.49
+<div class="entry" markdown="1">
+<div class="role"><strong>B.Tech, Computer Science and Engineering</strong><span class="muted">Sep 2021 – May 2025</span></div>
+<div class="meta">DIT University, Dehradun · CGPA 8.49 / 10</div>
+</div>
 
-### Certifications
-- Data Analysis with Python - freeCodeCamp
-- Data Science Orientation - Coursera
-- Tools for Data Science - Coursera
+## skills
 
-### Technical Skills
-- **Languages**: Python, Java, MySQL, CPP
-- **Framework / Libraries**: Pandas, Numpy, Matplotlib, Scikitlearn, PyTorch
-- **Tools**: Visual Studio, IntelliJ, VS Code, Git, Linux
+- **languages:** Python, Java, C++, SQL
+- **ml / speech:** PyTorch, ONNX, scikit-learn, Pandas, NumPy
+- **tools:** Git, Linux, Hugging Face Datasets, VS Code, Streamlit, Power BI
 
-### Contact
-Feel free to reach out for collaborations or opportunities.
+## certifications
 
-- **Email**: ps1442003@outlook.com
-- **Twitter**: [x.com/MrProtho](https://x.com/MrProtho)
+- IBM Data Science Specialization (Coursera)
+- Data Analysis with Python (freeCodeCamp)
+
+## contact
+
+- [{{ site.email }}](mailto:{{ site.email }})
+- [LinkedIn]({{ site.linkedin_url }}) · [GitHub](https://github.com/{{ site.github_username }}) · [X](https://x.com/{{ site.x_username }})

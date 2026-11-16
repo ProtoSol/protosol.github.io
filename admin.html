@@ -1,0 +1,95 @@
+---
+layout: null
+permalink: /admin/
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Write</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+  <style>
+    body { max-width: 48rem; margin: 0 auto; padding: 1rem 16px; }
+    .admin .import { margin-top: 1rem; }
+    .admin label { display: block; margin-top: 1rem; }
+    .admin .check { font-weight: normal; }
+    .admin input[type="text"],
+    .admin input[type="password"],
+    .admin textarea { display: block; width: 100%; max-width: 40rem; margin-top: 0.25rem; }
+    .admin textarea { min-height: 18rem; font-family: ui-monospace, monospace; }
+    .admin .hint, .admin .actions, .admin #file-label { max-width: 40rem; }
+    .admin .actions { margin-top: 1rem; }
+    .admin .actions button { margin-right: 0.5rem; }
+    .post-picker { list-style: none; margin: 1rem 0; padding: 0; }
+    .post-picker button { background: none; border: 0; padding: 0.2rem 0; cursor: pointer; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main class="page-content" aria-label="Write">
+    <div class="wrapper admin">
+      <p><a href="{{ '/' | relative_url }}">Site</a></p>
+      <h1>Write</h1>
+
+      <section id="signin">
+        <p class="hint">The token is the login. Create a fine-grained personal access token at <a href="https://github.com/settings/personal-access-tokens/new">GitHub settings</a>. Limit it to <strong>ProtoSol/protosol.github.io</strong>, set Contents to read and write, and set an expiry. This page keeps the token in this browser only. It is never stored in the site.</p>
+        <form id="signin-form">
+          <label>GitHub token
+            <input id="token" type="password" autocomplete="off" spellcheck="false" required>
+          </label>
+          <label class="check">
+            <input id="remember" type="checkbox" checked>
+            Remember in this browser
+          </label>
+          <button type="submit">Sign in</button>
+        </form>
+        <p id="signin-status" role="status"></p>
+      </section>
+
+      <section id="app" hidden>
+        <p>Signed in as <strong id="who"></strong>.
+          <button id="logout" type="button">Log out</button>
+        </p>
+        <p class="hint">On a shared computer, log out when you are done. Anyone with this token can change the repository.</p>
+        <button id="new-post" type="button">New post</button>
+        <label class="check import">Import a .txt post
+          <input id="import-file" type="file" accept=".txt,.md,text/plain">
+        </label>
+        <p class="hint">A .txt post is a header between two <code>---</code> lines (title, date, categories) followed by the body. See blog_post_template.txt.</p>
+        <ul id="post-list" class="post-picker"></ul>
+        <form id="editor">
+          <p id="file-label"></p>
+          <label>Title
+            <input id="title" type="text" required>
+          </label>
+          <label>Categories
+            <input id="categories" type="text" placeholder="Notes">
+          </label>
+          <p class="hint">Spaces split categories. Wrap one phrase in quotes if it should stay a single category.</p>
+          <label>Date
+            <input id="date" type="text" required spellcheck="false">
+          </label>
+          <p class="hint">YYYY-MM-DD HH:MM:SS +0000. A new post uses the date as its filename.</p>
+          <label class="check">
+            <input id="draft" type="checkbox">
+            Draft (not published)
+          </label>
+          <label>Body
+            <textarea id="body"></textarea>
+          </label>
+          <div class="actions">
+            <button type="submit">Save</button>
+            <button id="delete" type="button">Delete</button>
+          </div>
+          <p id="save-status" role="status"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="{{ '/assets/admin.js' | relative_url }}"></script>
+</body>
+</html>

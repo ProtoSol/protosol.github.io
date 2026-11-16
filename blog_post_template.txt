@@ -1,20 +1,32 @@
 ---
 layout: post
-title:  "Your Post Title"
-date:   YYYY-MM-DD HH:MM:SS +0000
-categories: category1 category2
+title: "Your Post Title"
+date: 2026-01-01 12:00:00 +0000
+categories: voice-ai notes
 ---
 
-Your post content here.
-
-You can write in Markdown.
+Write the post here in plain text or Markdown.
 
 ## Subheading
 
-More content.
+More content. Blank line = new paragraph.
 
-```language
-code block
+- bullet one
+- bullet two
+
+```python
+print("code block")
 ```
 
-[Link](url)
+[a link](https://example.com)
+
+<!--
+HOW TO PUBLISH
+1. Copy this file to _posts/ and name it YYYY-MM-DD-your-title.txt
+   (the date in the name must match the date above, no spaces in the name).
+2. Fill in the header, write the body, delete this comment.
+3. git add _posts/ && git commit -m "new post" && git push
+   The GitHub Action builds and deploys it. Add `published: false` to the
+   header to keep a draft out of the site.
+Or: open /admin/, use "Import a .txt post", review, Save.
+-->

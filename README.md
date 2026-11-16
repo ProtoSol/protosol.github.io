@@ -1,40 +1,23 @@
 # protosol.github.io
-This is the portfolio website that is being hosted via the github pages.
-This is not being updated with the laatest information but I will update this sooner.
+Personal site (Jekyll, custom mono theme, deployed by GitHub Actions on push to `main`).
 
-## Local Development
+## Writing a post from a .txt file
+1. Copy `blog_post_template.txt` to `_posts/YYYY-MM-DD-your-title.txt`.
+2. Edit the header (title, date, categories) and write the body in plain text or Markdown.
+3. `git add _posts && git commit -m "new post" && git push`.
 
-1.  **Install Ruby and Bundler**:
-    Ensure you have Ruby installed. Then install Bundler:
-    ```bash
-    gem install bundler
-    ```
+Add `published: false` to the header to keep a draft off the site. You can also open `/admin/`
+(needs a fine-grained GitHub token), use "Import a .txt post", review and Save.
 
-2.  **Install Dependencies**:
-    Run the following command to install the required gems locally:
-    ```bash
-    bundle install --path vendor/bundle
-    ```
-
-3.  **Run the Site**:
-    Start the local server:
-    ```bash
-    bundle exec jekyll serve
-    ```
-
-4.  **View the Site**:
-    Open your browser and navigate to `http://localhost:4000`.
-
+## Local development
+```bash
+bundle install --path vendor/bundle
+bundle exec jekyll serve   # http://localhost:4000
+```
 
 ## Structure
-
--   `_posts/`: Contains blog posts.
--   `portfolio.md`: The portfolio page.
--   `about.md`: The about page with resume information.
--   `blog.md`: The blog page with pagination.
--   `_config.yml`: Site configuration.
--   `blog_post_template.txt`: Template for creating new blog posts.
-
-## Adding Blog Posts
-
-Use `blog_post_template.txt` as a starting point. Copy its content, rename to `YYYY-MM-DD-title.md`, and place in `_posts/`.
+- `_layouts/`, `_includes/`, `assets/main.scss`, `assets/theme.js`: the theme
+- `_data/metrics.yml`: numbers for the home-page ASCII bar chart
+- `index.md`, `about.md`, `portfolio.md`, `blog/index.md`, `404.md`: pages
+- `_posts/`: posts (`.md` or `.txt`)
+- `admin.html`, `assets/admin.js`: browser blog editor

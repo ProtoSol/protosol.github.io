@@ -1,32 +1,51 @@
 ---
 layout: page
-title: Portfolio
+title: work
 permalink: /portfolio/
 ---
 
-Here are some of the projects I have worked on.
+<article class="entry" markdown="1">
 
-## Stock Market Price Prediction
-**Technologies**: Python, Streamlit, Machine Learning
+### Kapture v3 — 11-language Indic ASR
+<div class="tags">python · pytorch · speech · fonada</div>
 
-Developed a stock market analyzer that scrapes data from Yahoo Finance and provides real-time stock updates with predictions. A time series sequence algorithm was used to predict the upcoming value of a specified stock up to a given number of days by the user.
+Contributed to data processing, data generation and model training. Strict WER of **21.9%** across the 74,500-clip Vistaar benchmark (saaras:v3 28.3%, saaras:v4 29.0%), **6.06 OI-WER** on Monsoon Hindi, **13.1 WER** on Vaani Hindi and **5.54%** averaged over nine English sets. Served as a batch transcription API on FonadaLabs.
 
-## Dashboard for Call Center
-**Technologies**: Excel, Data Visualization
+[model card](https://huggingface.co/fonada/kapture-v3)
+</article>
 
-Developed a dashboard using the "Real World Fake Dataset – Call Center" data to enhance control over customer trends and responses. Utilized pivot table functionality for charts and graphs, incorporating basic data cleaning.
+<article class="entry" markdown="1">
 
-## Dashboard for Electronic Based Company
-**Technologies**: Power BI, Data Visualization
+### OWSM Smart Turn v2 — end-of-turn detection
+<div class="tags">pytorch · onnx · owsm · open source</div>
 
-Developed a Dashboard using dataset to solve the problem of declining profit despite similar sales of organization. Basic Data cleaning, Data analysis and Data visualization was used to make the Dashboard.
+Fine-tuned the OWSM v4 speech encoder (102M parameters, pretrained on 320k hours) with a Smart Turn classification head for 8-second, clip-level end-of-turn detection in English and eight Indian languages. Built a balanced complete/incomplete speech set from LLM utterances synthesized with Sarvam TTS, trained with noise augmentation and exported an INT8 ONNX model.
 
-## Noise Suppression Model
-**Technologies**: Deep Learning
+**0.909** weighted F1 on 10,458 Indian-language test clips versus **0.712** for stock Smart Turn v3.2 (+0.197); **0.914** across the full 18,278-clip Indian + English set.
 
-Developed and optimized a noise suppression model for real-time processing with batching capability, leveraging advanced deep learning algorithms.
+[github.com/ProtoSol/smart-turn-owsm](https://github.com/ProtoSol/smart-turn-owsm)
+</article>
 
-## Smart Turn Model
-**Technologies**: AI/ML
+<article class="entry" markdown="1">
 
-Currently working on the Smart Turn model, which enhances the voice bot's ability to maintain a natural conversation flow.
+### Real-time noise suppression
+<div class="tags">pytorch · audio · fonada</div>
+
+PyTorch noise-suppression pipeline for real-time audio with batched inference; evaluated latency/quality trade-offs for voice-bot workflows.
+</article>
+
+<article class="entry" markdown="1">
+
+### Turn-taking for production voice bots
+<div class="tags">voice ai · telephony · fonada</div>
+
+Predicting when the system should listen, respond, or pause so telephony conversations stay natural. Ongoing.
+</article>
+
+<article class="entry" markdown="1">
+
+### earlier work
+<div class="tags">python · streamlit · excel · power bi</div>
+
+Streamlit price-forecasting app over Yahoo Finance data (time-series sequence model); Excel and Power BI dashboards for call-center response volume and for sales segments where margins fell despite stable revenue.
+</article>

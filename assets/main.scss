@@ -1,0 +1,114 @@
+---
+---
+:root {
+  --bg: #fbfaf7;
+  --fg: #1c1c1a;
+  --muted: #77756e;
+  --line: #dcd9d0;
+  --accent: #b4541a;
+  --code-bg: #f0eee7;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12120f;
+    --fg: #e6e4dc;
+    --muted: #8d8b82;
+    --line: #2d2d28;
+    --accent: #e8a35c;
+    --code-bg: #1b1b17;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12120f;
+  --fg: #e6e4dc;
+  --muted: #8d8b82;
+  --line: #2d2d28;
+  --accent: #e8a35c;
+  --code-bg: #1b1b17;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 15px/1.7 "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.wrap { max-width: 68ch; margin: 0 auto; padding: 1.5rem 16px 3rem; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+a:hover { border-bottom-style: solid; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 8px; background: var(--bg); padding: 4px 8px; }
+
+.muted { color: var(--muted); }
+.rule { color: var(--line); overflow: hidden; white-space: nowrap; margin: 2rem 0 1rem; }
+
+h1, h2, h3 { line-height: 1.3; font-weight: 600; margin: 2.2rem 0 0.8rem; }
+h1 { font-size: 1.5rem; margin-top: 1.5rem; }
+h2 { font-size: 1.1rem; }
+h3 { font-size: 1rem; }
+p, ul, ol { margin: 0.8rem 0; }
+ul { padding-left: 1.4rem; }
+li::marker { color: var(--muted); }
+hr { border: 0; border-top: 1px dashed var(--line); margin: 2rem 0; }
+blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 2px solid var(--accent); color: var(--muted); }
+img { max-width: 100%; }
+
+code, pre { font: inherit; font-size: 0.92em; }
+code { background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 3px; }
+pre { background: var(--code-bg); padding: 0.9rem 1rem; overflow-x: auto; line-height: 1.45; border-radius: 3px; }
+pre code { background: none; padding: 0; }
+
+.site-header {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem;
+  justify-content: space-between; align-items: baseline;
+  padding-bottom: 0.8rem; border-bottom: 1px dashed var(--line);
+}
+.site-header .brand { font-weight: 600; color: var(--fg); border: 0; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; align-items: baseline; }
+.site-header nav a { color: var(--fg); border: 0; }
+.site-header nav a:hover { color: var(--accent); }
+.site-header nav a[aria-current="page"]::before { content: "> "; color: var(--accent); }
+#theme-toggle {
+  font: inherit; font-size: 0.85em; color: var(--muted); background: none;
+  border: 0; padding: 0; cursor: pointer;
+}
+#theme-toggle:hover { color: var(--accent); }
+
+.hero { margin-top: 1.5rem; }
+.hero .ascii { background: none; padding: 0; margin: 0; color: var(--accent); font-size: 1.1rem; line-height: 1.15; }
+.wave { color: var(--muted); letter-spacing: 0.05em; margin: 0.4rem 0 0; }
+.tagline { margin: 0.4rem 0 1.5rem; font-size: 1.05rem; }
+.cursor { color: var(--accent); animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+
+.chart { margin: 1.5rem 0; }
+.chart figcaption { color: var(--muted); font-size: 0.9em; }
+.chart pre { color: var(--fg); background: none; padding: 0.4rem 0; border-left: 2px solid var(--line); padding-left: 1rem; }
+
+.post-list { list-style: none; padding: 0; }
+.post-list li { margin: 0.9rem 0; }
+.post-list time { display: inline-block; margin-right: 1ch; }
+.post-list .excerpt { color: var(--muted); font-size: 0.92em; margin-top: 0.15rem; }
+
+.entry { margin: 1.8rem 0; padding-top: 1rem; border-top: 1px dashed var(--line); }
+.entry h3 { margin-top: 0; }
+.entry .meta { color: var(--muted); font-size: 0.9em; margin: 0.2rem 0 0.6rem; }
+.role { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 1rem; }
+.tags { color: var(--muted); font-size: 0.88em; }
+
+.site-footer { margin-top: 3rem; font-size: 0.88em; }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+.err { text-align: center; padding: 2rem 0; }
+.err pre { display: inline-block; text-align: left; background: none; color: var(--accent); }
+
+@media (max-width: 520px) {
+  body { font-size: 14px; }
+  .hero .ascii { font-size: 0.95rem; }
+}

@@ -1,33 +1,11 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
-  <div class="wrapper">
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
-      </div>
-    </div>
-
-  </div>
-
+<footer class="site-footer">
+  <p class="rule">────────────────────────────────────────</p>
+  <p>
+    <a href="mailto:{{ site.email }}">email</a> ·
+    <a href="https://github.com/{{ site.github_username }}">github</a> ·
+    <a href="{{ site.linkedin_url }}">linkedin</a> ·
+    <a href="https://x.com/{{ site.x_username }}">x</a> ·
+    <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+  </p>
+  <p class="muted">© {{ site.time | date: "%Y" }} {{ site.author }}</p>
 </footer>
