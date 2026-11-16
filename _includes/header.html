@@ -3,8 +3,9 @@
   <nav aria-label="Main">
     {%- for item in site.nav -%}
       {%- assign active = false -%}
-      {%- if page.url == item.url or page.url contains item.url -%}{%- assign active = true -%}{%- endif -%}
-      <a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- if page.url == item.url or page.url contains item.url and item.url != "/" -%}{%- assign active = true -%}{%- endif -%}
+      {%- if item.url contains "://" -%}{%- assign href = item.url -%}{%- else -%}{%- assign href = item.url | relative_url -%}{%- endif -%}
+      <a href="{{ href }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
     {%- endfor -%}
     <button id="theme-toggle" type="button" aria-label="Toggle light or dark theme">[ theme ]</button>
   </nav>

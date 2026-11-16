@@ -11,7 +11,21 @@ permalink: /portfolio/
 
 Contributed to data processing, data generation and model training. Strict WER of **21.9%** across the 74,500-clip Vistaar benchmark (saaras:v3 28.3%, saaras:v4 29.0%), **6.06 OI-WER** on Monsoon Hindi, **13.1 WER** on Vaani Hindi and **5.54%** averaged over nine English sets. Served as a batch transcription API on FonadaLabs.
 
+{% include metric-chart.html %}
+
+The gap is smaller under Sarvam's normalizer (17.3% vs 18.1%), and the model is a team effort at Fonada. All numbers come from the public model card.
+
 [model card](https://huggingface.co/fonada/kapture-v3)
+</article>
+
+<article class="entry" markdown="1">
+
+### Deep Learning with PyTorch — a tutorial book
+<div class="tags">python · pytorch · numpy · matplotlib</div>
+
+A 90-page, 17-chapter book that goes from classical machine learning through transformers, diffusion models, reinforcement learning, deployment and graph neural networks. Every chapter pairs the explanation with runnable Python scripts.
+
+[read it](https://protosol.github.io/deep-learning/) · [source](https://github.com/ProtoSol/deep-learning)
 </article>
 
 <article class="entry" markdown="1">
